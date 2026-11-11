@@ -1,0 +1,15 @@
+{
+  "name": "DroidParadeShared",
+  "version": "1.0.0",
+  "description": "Gemeinsame Datenstruktur und Konstanten für Droid Parade (Master/Slave via ESP-NOW).",
+  "keywords": "esp32, esp-now, droid, droid parade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeanetteMueller/DroidParadeShared.git"
+  },
+  "authors": [
+    { "name": "Jeanette Müller", "url": "https://github.com/JeanetteMueller", "maintainer": true }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}
