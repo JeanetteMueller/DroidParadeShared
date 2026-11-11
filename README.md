@@ -5,7 +5,7 @@ Gemeinsame Basis der **Droid Parade**-Bibliotheken. Wird automatisch von `DroidP
 **Autorin:** Jeanette Müller · **Version:** 1.0.0 · **Plattform:** ESP32 (Arduino)
 
 ## Inhalt
-`DroidParadePacket` – das per ESP-NOW übertragene Paket (ca. 20 Byte, gepackt, mit Magic, Version, Sequenznummer und CRC-8):
+`DroidParadePacket` – das per ESP-NOW übertragene Paket (ca. 33 Byte, gepackt, mit Magic, Version, Parade-ID, 32-Bit-Sequenznummer und 8 Byte HMAC-SHA256):
 
 | Parameter | Typ |
 |---|---|
@@ -19,6 +19,6 @@ Gemeinsame Basis der **Droid Parade**-Bibliotheken. Wird automatisch von `DroidP
 | `light_prop` | `DP_LIGHT_OFF` / `DP_LIGHT_COLOR` / `DP_LIGHT_RAINBOW` |
 | `light_color` | uint32_t (z. B. `0xRRGGBB`) |
 
-Die Bool-Gruppen sind als Bitmasken gepackt (Bit 0 = Nr. 1). Dazu: `droidParadeSeal()` / `droidParadeValid()` und `DROID_PARADE_TIMEOUT_MS`.
+Die Bool-Gruppen sind als Bitmasken gepackt (Bit 0 = Nr. 1). Dazu: `DroidParadeConfig` (Parade-ID, Secret, Kanal), `droidParadeSeal(p, secret)` / `droidParadeValid(p, secret)` und `DROID_PARADE_TIMEOUT_MS`.
 
 Änderungen am Paket immer hier vornehmen und `DROID_PARADE_PROTO_VER` erhöhen; Master und Slave müssen dieselbe Version nutzen.
